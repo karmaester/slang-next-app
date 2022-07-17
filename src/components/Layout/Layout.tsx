@@ -7,7 +7,6 @@ export default function Layout({ children }: { children: JSX.Element }) {
         <>
             <Head>
                 <title>Slang App</title>
-                <link rel="icon" href="/LOGO-solo-icono.svg" />
             </Head>
             <Header />
             <main>{children}</main>

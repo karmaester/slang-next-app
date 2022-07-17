@@ -1,0 +1,24 @@
+.button {
+    width: fit-content;
+    font-weight: 700;
+    color: #fff;
+    background: #0577d6;
+    border: 2px solid #0577d6;
+    font-size: 20px;
+    padding: 20px 40px;
+    cursor: pointer;
+    border-radius: 100px;
+    font-weight: 500;
+    transition: background .15s linear, border-color .15s linear, color .15s linear, box-shadow .5s cubic-bezier(.215, .61, .355, 1);
+}
+
+.button:hover {
+    background: #035497;
+    border: 2px solid #014983;
+    box-shadow: 2px 5px #888888;
+}
+
+.button:active {
+    margin-top: 1px;
+    box-shadow: 2px 3px #888888;
+}

@@ -2,8 +2,10 @@
 
 .headerContainer {
     height: 3rem;
-    background-color: $quinary-color;
     text-align: center;
+    color: #fff;
+    background: #0577d6;
+    border: 2px solid #0577d6;
 
     .content {
         padding: 0.5rem;
