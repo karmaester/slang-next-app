@@ -1,0 +1,11 @@
+@import './mixins.scss';
+
+.headerContainer {
+    height: 3rem;
+    background-color: $quinary-color;
+    text-align: center;
+
+    .content {
+        padding: 0.5rem;
+    }
+}

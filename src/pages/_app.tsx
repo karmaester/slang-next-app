@@ -1,10 +1,11 @@
-import '../styles/globals.scss'
+import 'styles/global.scss'
 import 'styles/mixins.scss'
 
-import type { AppProps } from 'next/app'
+export default function MyApp({ Component, pageProps }: any) {
+  // Use the layout defined at the page level, if available
+  const getLayout = Component.getLayout || ((page: JSX.Element) => page)
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return getLayout(
+    <Component {...pageProps} />
+  )
 }
-
-export default MyApp
