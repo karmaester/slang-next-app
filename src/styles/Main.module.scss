@@ -4,15 +4,12 @@
     justify-content: space-around;
     min-height: 90vh;
 
-}
-
-.submitButton {
-    display: flex;
-    justify-content: center;
+    &>* {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .audioPlayer {
     width: 100%;
-    display: flex;
-    justify-content: center;
 }

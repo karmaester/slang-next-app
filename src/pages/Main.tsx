@@ -1,5 +1,6 @@
 import AudioPlayer from "@components/AudioPlayer/component/AudioPlayer";
 import Button from "@components/Button/component/Button";
+import DraggableChars from "@components/DraggableChars/component/DraggableChars";
 import styles from "../styles/Main.module.scss"
 
 const Main = () => {
@@ -9,6 +10,7 @@ const Main = () => {
             <div className={styles.audioPlayer}>
                 <AudioPlayer />
             </div>
+            <DraggableChars />
             <div className={styles.submitButton}>
                 <Button text="Submit" />
             </div>
