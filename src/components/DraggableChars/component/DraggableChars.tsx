@@ -33,7 +33,7 @@ const reorder = (list, startIndex, endIndex) => {
     return result;
 };
 
-function App() {
+const DraggableChars = () => {
     const [tasks, setTasks] = useState(initialItems);
     return (
         <DragDropContext
@@ -83,4 +83,4 @@ function App() {
     );
 }
 
-export default App;
+export default DraggableChars;

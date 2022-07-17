@@ -4,8 +4,10 @@ import Image from "next/image";
 import soundWave from "../images/sound-wave.png"
 
 
-const AudioPlayer = () => {
-    const [playSound] = useSound("https://cdn.slangapp.com/sounds/71e760668ef2feab99202dbc80b734c04a50f079/normalized.mp3")
+const AudioPlayer = ({ audio }: { audio: string }) => {
+    const [playSound] = useSound(audio)
+
+    console.log(audio)
 
     return (
         <button onClick={() => playSound()}>
