@@ -4,7 +4,7 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "front-next-pwa",
+    "name": "slang-next-pwa",
     "short_name": "next-pwa",
     "description": "description next-pwa",
     "icons": [

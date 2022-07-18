@@ -2,8 +2,17 @@ import { useEffect, useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import styles from "../styles/DraggableChars.module.scss"
 
+type charsT = {
+    id: string,
+    text: string,
+}[];
 
-const reorder = (list, startIndex, endIndex) => {
+type DraggableCharsPropsT = {
+    word: string[],
+    changeHandler: any,
+}
+
+const reorder = (list: charsT, startIndex: number, endIndex: number) => {
     const result = [...list];
     const [removed] = result.splice(startIndex, 1);
     result.splice(endIndex, 0, removed);
@@ -11,11 +20,11 @@ const reorder = (list, startIndex, endIndex) => {
     return result;
 };
 
-const DraggableChars = ({ word, changeHandler }: any) => {
-    const [chars, setChars] = useState<any>([]);
+const DraggableChars = ({ word, changeHandler }: DraggableCharsPropsT) => {
+    const [chars, setChars] = useState<charsT | []>([]);
 
     useEffect(() => {
-        setChars(word.map((item, idx) => {
+        setChars(word.map((item: string, idx: number) => {
             return {
                 id: idx.toString(),
                 text: item
@@ -24,7 +33,7 @@ const DraggableChars = ({ word, changeHandler }: any) => {
     }, [word]);
 
     useEffect(() => {
-        changeHandler(chars.map((item: any) => item.text));
+        changeHandler(chars.map((item) => item.text));
     }, [chars, changeHandler])
 
     return (
