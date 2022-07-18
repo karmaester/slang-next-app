@@ -48,11 +48,13 @@ const Main = () => {
 
     return (
         <>
-            <Link href="/Home">
-                <a className={styles.exit}>
-                    <IoMdArrowRoundBack />
-                </a>
-            </Link>
+            <div className={styles.exitButtonContainer}>
+                <Link href="/Home">
+                    <a className={styles.exit}>
+                        <IoMdArrowRoundBack />
+                    </a>
+                </Link>
+            </div>
             <div className={styles.container}>
                 <div className={styles.audioPlayer}>
                     <AudioPlayer audio={currentAudio} />

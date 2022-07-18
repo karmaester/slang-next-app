@@ -9,8 +9,8 @@
     transition-property: background, border-color;
     transition-timing-function: ease-in-out;
     &:focus {
-        background: $secondary-color;
-        border-color: $secondary-color;
+        background: $primary-color;
+        border-color: $primary-color;
     }
 }
 
