@@ -25,7 +25,7 @@ const DraggableChars = ({ word, changeHandler }: any) => {
 
     useEffect(() => {
         changeHandler(chars.map((item: any) => item.text));
-    }, [chars])
+    }, [chars, changeHandler])
 
     return (
         <DragDropContext
