@@ -1,29 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import styles from "../styles/DraggableChars.module.scss"
 
-const initialItems = [
-    {
-        id: "1",
-        text: "o",
-    },
-    {
-        id: "2",
-        text: "h",
-    },
-    {
-        id: "3",
-        text: "l",
-    },
-    {
-        id: "4",
-        text: "e",
-    },
-    {
-        id: "5",
-        text: "l",
-    },
-];
 
 const reorder = (list, startIndex, endIndex) => {
     const result = [...list];
@@ -33,8 +11,22 @@ const reorder = (list, startIndex, endIndex) => {
     return result;
 };
 
-const DraggableChars = () => {
-    const [tasks, setTasks] = useState(initialItems);
+const DraggableChars = ({ word, changeHandler }: any) => {
+    const [chars, setChars] = useState<any>([]);
+
+    useEffect(() => {
+        setChars(word.map((item, idx) => {
+            return {
+                id: idx.toString(),
+                text: item
+            }
+        }))
+    }, [word]);
+
+    useEffect(() => {
+        changeHandler(chars.map((item: any) => item.text));
+    }, [chars])
+
     return (
         <DragDropContext
             onDragEnd={(result) => {
@@ -49,20 +41,20 @@ const DraggableChars = () => {
                     return;
                 }
 
-                setTasks((prevTasks) =>
-                    reorder(prevTasks, source.index, destination.index)
+                setChars((prevChars) =>
+                    reorder(prevChars, source.index, destination.index)
                 );
             }}
         >
-            <Droppable droppableId="tasks" direction="horizontal">
+            <Droppable droppableId="chars" direction="horizontal">
                 {(droppableProvided) => (
                     <ul
                         {...droppableProvided.droppableProps}
                         ref={droppableProvided.innerRef}
                         className={styles.itemsContainer}
                     >
-                        {tasks.map((task, index) => (
-                            <Draggable key={task.id} draggableId={task.id} index={index}>
+                        {chars.map((char, index) => (
+                            <Draggable key={char.id} draggableId={char.id} index={index}>
                                 {(draggableProvided) => (
                                     <li
                                         {...draggableProvided.draggableProps}
@@ -70,7 +62,7 @@ const DraggableChars = () => {
                                         {...draggableProvided.dragHandleProps}
                                         className={styles.item}
                                     >
-                                        {task.text}
+                                        {char.text}
                                     </li>
                                 )}
                             </Draggable>

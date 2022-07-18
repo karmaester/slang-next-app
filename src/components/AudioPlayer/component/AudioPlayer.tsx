@@ -7,8 +7,6 @@ import soundWave from "../images/sound-wave.png"
 const AudioPlayer = ({ audio }: { audio: string }) => {
     const [playSound] = useSound(audio)
 
-    console.log(audio)
-
     return (
         <button onClick={() => playSound()}>
             <Image
