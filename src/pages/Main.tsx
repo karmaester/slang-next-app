@@ -15,7 +15,7 @@ const mockData = {
 const Main = () => {
     const [loading, setLoading] = useState(false);
     const [word, setWord] = useState<string[]>([]);
-    const [currentAudio, setCurrentAudio] = useState<string | undefined>("");
+    const [currentAudio, setCurrentAudio] = useState<string>("");
     const [initialFetch, setInitialFetch] = useState(true);
     const [userResponse, setUserResponse] = useState();
 
