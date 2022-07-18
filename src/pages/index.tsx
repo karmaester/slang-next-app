@@ -1,8 +1,8 @@
-import Main from './Main'
+import Home from './Home'
 import Layout from '@components/Layout/Layout'
 
 export default function Index() {
-  return <Main />
+  return <Home />
 }
 
 Index.getLayout = function getLayout(page: JSX.Element) {

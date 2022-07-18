@@ -8,9 +8,9 @@ const Home = () => {
     return (
         <div className={styles.container}>
             <Avatar />
-            <Link href="/main">
+            <Link href="/Main">
                 <a>
-                    <Button text="Start playing" color="primary" />
+                    <Button text="Start playing" />
                 </a>
             </Link>
         </div>

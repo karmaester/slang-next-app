@@ -1,7 +1,9 @@
 import AudioPlayer from "@components/AudioPlayer/component/AudioPlayer";
 import Button from "@components/Button/component/Button";
 import DraggableChars from "@components/DraggableChars/component/DraggableChars";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { IoMdArrowRoundBack } from "react-icons/io";
 import styles from "../styles/Main.module.scss"
 
 const mockData = {
@@ -45,15 +47,22 @@ const Main = () => {
     if (initialFetch) fetchNewWord();
 
     return (
-        <div className={styles.container}>
-            <div className={styles.audioPlayer}>
-                <AudioPlayer audio={currentAudio} />
+        <>
+            <Link href="/Home">
+                <a className={styles.exit}>
+                    <IoMdArrowRoundBack />
+                </a>
+            </Link>
+            <div className={styles.container}>
+                <div className={styles.audioPlayer}>
+                    <AudioPlayer audio={currentAudio} />
+                </div>
+                <DraggableChars word={word} changeHandler={setUserResponse} />
+                <div className={styles.submitButton}>
+                    <Button text="Submit" onClickHandler={() => fetchNewWord()} />
+                </div>
             </div>
-            <DraggableChars word={word} changeHandler={setUserResponse} />
-            <div className={styles.submitButton}>
-                <Button text="Submit" onClickHandler={() => fetchNewWord()} />
-            </div>
-        </div>
+        </>
     );
 };
 
