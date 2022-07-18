@@ -40,9 +40,9 @@ const Main = () => {
             });
     };
 
-    useEffect(() => {
-        console.log("userResponse: ", userResponse);
-    }, [userResponse]);
+    // useEffect(() => {
+    //     console.log("userResponse: ", userResponse);
+    // }, [userResponse]);
 
     if (initialFetch) fetchNewWord();
 
