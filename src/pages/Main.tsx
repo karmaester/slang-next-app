@@ -38,11 +38,11 @@ const Main = () => {
                 setCurrentAudio(mockData["audio-url"])
                 setLoading(false);
             });
-    }
+    };
 
     useEffect(() => {
         console.log("userResponse: ", userResponse);
-    })
+    }, [userResponse]);
 
     if (initialFetch) fetchNewWord();
 
