@@ -1,7 +1,9 @@
 import AudioPlayer from "@components/AudioPlayer/component/AudioPlayer";
 import Button from "@components/Button/component/Button";
 import DraggableChars from "@components/DraggableChars/component/DraggableChars";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { IoMdArrowRoundBack } from "react-icons/io";
 import styles from "../styles/Main.module.scss"
 
 const mockData = {
@@ -13,7 +15,7 @@ const mockData = {
 const Main = () => {
     const [loading, setLoading] = useState(false);
     const [word, setWord] = useState<string[]>([]);
-    const [currentAudio, setCurrentAudio] = useState<string | undefined>("");
+    const [currentAudio, setCurrentAudio] = useState<string>("");
     const [initialFetch, setInitialFetch] = useState(true);
     const [userResponse, setUserResponse] = useState();
 
@@ -36,24 +38,33 @@ const Main = () => {
                 setCurrentAudio(mockData["audio-url"])
                 setLoading(false);
             });
-    }
+    };
 
     useEffect(() => {
         console.log("userResponse: ", userResponse);
-    })
+    }, [userResponse]);
 
     if (initialFetch) fetchNewWord();
 
     return (
-        <div className={styles.container}>
-            <div className={styles.audioPlayer}>
-                <AudioPlayer audio={currentAudio} />
+        <>
+            <div className={styles.exitButtonContainer}>
+                <Link href="/Home">
+                    <a className={styles.exit}>
+                        <IoMdArrowRoundBack />
+                    </a>
+                </Link>
             </div>
-            <DraggableChars word={word} changeHandler={setUserResponse} />
-            <div className={styles.submitButton}>
-                <Button text="Submit" onClickHandler={() => fetchNewWord()} />
+            <div className={styles.container}>
+                <div className={styles.audioPlayer}>
+                    <AudioPlayer audio={currentAudio} />
+                </div>
+                <DraggableChars word={word} changeHandler={setUserResponse} />
+                <div className={styles.submitButton}>
+                    <Button text="Submit" onClickHandler={() => fetchNewWord()} />
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

@@ -1,0 +1,46 @@
+@import '~@styles/mixins.scss';
+
+.audioPlayer {
+    border-radius: 100px;
+    border-color: $primary-color;
+    border-width: 2px;
+    padding: 0 0.5rem;
+    transition-duration: 1s;
+    transition-property: background, border-color;
+    transition-timing-function: ease-in-out;
+    &:focus {
+        background: $primary-color;
+        border-color: $primary-color;
+    }
+}
+
+.imagesContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // font-size: 1rem;
+    svg {
+        height: 2rem;
+        width: 2rem;
+        margin-right: 0.5rem;
+    }
+}
+
+@include media-medium {
+    .audioPlayer {
+        padding: 0.8rem;
+    }
+
+    .imagesContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        // font-size: 1rem;
+        svg {
+            height: 3rem;
+            width: 3rem;
+            margin-right: 0.5rem;
+        }
+    }
+}
+

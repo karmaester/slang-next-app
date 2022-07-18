@@ -1,15 +1,45 @@
+@import '~@styles/mixins.scss';
+
 .container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    min-height: 90vh;
+    min-height: 60vh;
 
     &>* {
         display: flex;
         justify-content: center;
+        margin-top: 1rem;
+    }
+
+}
+
+.exitButtonContainer {
+    margin-top: 1rem;
+}
+
+.exit {
+    font-size: 2rem;
+    padding: 1rem;
+    color: $primary-color;
+    line-height: 1rem;
+    &:hover {
+        color: $quaternary-color;
     }
 }
 
 .audioPlayer {
     width: 100%;
+}
+
+@include media-medium {
+    .exitButtonContainer {
+        margin-top: 2rem;
+    }
+    
+    .exit {
+        line-height: 2rem;
+        font-size: 3rem;
+        padding: 2rem;
+    }
 }

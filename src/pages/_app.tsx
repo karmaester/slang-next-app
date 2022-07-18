@@ -1,3 +1,4 @@
+import Layout from '@components/Layout/Layout'
 import 'styles/global.scss'
 import 'styles/mixins.scss'
 
@@ -6,6 +7,8 @@ export default function MyApp({ Component, pageProps }: any) {
   const getLayout = Component.getLayout || ((page: JSX.Element) => page)
 
   return getLayout(
-    <Component {...pageProps} />
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   )
 }
