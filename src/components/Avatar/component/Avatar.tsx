@@ -9,18 +9,20 @@ const Avatar = ({ message }: any) => {
     const [talks, setTalks] = useState(false);
     const [blinks, setBlinks] = useState(false);
     const [mustTalk, setMustTalk] = useState(true);
+    const [displayedText, setDisplaytext] = useState<string>("")
 
     const displayLetterByLetter = () => {
         let i = 0;
+        let temp = "";
         const arr = Array.from(message)
         const interval = setInterval(() => {
-            console.log("out")
-            if (i % 2 == 0) {
-                setTalks(true);
+            if (i % 5 == 0) {
+                setTalks(true)
             }
-            if (i % 2 != 0) {
-                setTalks(false);
+            if (i % 8 == 0) {
+                setTalks(false)
             }
+            temp += message.split("")[i]
             i++;
             if (i > arr.length - 2) {
                 setBlinks(true)
@@ -28,8 +30,10 @@ const Avatar = ({ message }: any) => {
             if (i > arr.length) {
                 clearInterval(interval);
                 setBlinks(false)
+            } else {
+                setDisplaytext(temp);
             }
-        }, 250);
+        }, 50);
     }
 
     useEffect(() => {
@@ -66,6 +70,9 @@ const Avatar = ({ message }: any) => {
                         height={150}
                     />
                 </div>
+            </div>
+            <div className={styles.dialogBelow}>
+                {displayedText}
             </div>
         </>
     )
