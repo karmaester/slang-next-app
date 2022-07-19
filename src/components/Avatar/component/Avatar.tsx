@@ -5,7 +5,7 @@ import blink from "../images/blink.svg";
 import talk from "../images/talk.svg";
 import styles from "../styles/Avatar.module.scss"
 
-const Avatar = ({ message }: any) => {
+const Avatar = ({ message, textOrientation }: any) => {
     const [talks, setTalks] = useState(false);
     const [blinks, setBlinks] = useState(false);
     const [mustTalk, setMustTalk] = useState(true);
@@ -71,7 +71,7 @@ const Avatar = ({ message }: any) => {
                     />
                 </div>
             </div>
-            <div className={styles.dialogBelow}>
+            <div className={textOrientation === "aside" ? styles.dialogAside : styles.dialogBelow}>
                 {displayedText}
             </div>
         </>

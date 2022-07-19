@@ -82,7 +82,7 @@ const Main = () => {
             </div>
             <div className={styles.container}>
                 <div className={styles.avatar}>
-                    <Avatar message="default" />
+                    <Avatar message="Click the button below to hear the audio, then drag the letters to the right possition" textOrientation="aside" />
                 </div>
                 <div className={styles.audioPlayer}>
                     <AudioPlayer audio={currentAudio} />
