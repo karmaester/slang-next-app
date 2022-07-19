@@ -50,7 +50,7 @@ const Avatar = ({ message, textOrientation }: any) => {
                     <Image
                         src={smile}
                         alt="Picture of the author"
-                        width={300}
+                        width={350}
                         height={150}
                     />
                 </div>
@@ -58,7 +58,7 @@ const Avatar = ({ message, textOrientation }: any) => {
                     <Image
                         src={talk}
                         alt="Picture of the author"
-                        width={300}
+                        width={350}
                         height={150}
                     />
                 </div>
@@ -66,7 +66,7 @@ const Avatar = ({ message, textOrientation }: any) => {
                     <Image
                         src={blink}
                         alt="Picture of the author"
-                        width={300}
+                        width={350}
                         height={150}
                     />
                 </div>

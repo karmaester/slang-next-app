@@ -1,3 +1,5 @@
+@import '~@styles/mixins.scss';
+
 .imagesContainer {
     position: relative;
     &>* {
@@ -26,7 +28,30 @@
 }
 
 .dialogAside {
+    font-size: medium;
     max-width: 200px;
     text-align: center;
-    margin: 1rem 16rem 0;
+    margin: 10rem auto 0;
 }
+
+
+@include media-small {
+    .dialogAside {
+        font-size: large;
+        max-width: 500px;
+        text-align: center;
+        margin: 1rem 16rem 0;
+    }
+
+}
+
+@include media-medium {
+    .dialogAside {
+        font-size: x-large;
+        max-width: 500px;
+        text-align: center;
+        margin: 1rem 16rem 0;
+    }
+
+}
+
