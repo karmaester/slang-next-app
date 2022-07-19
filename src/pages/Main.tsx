@@ -81,7 +81,9 @@ const Main = () => {
                 </Link>
             </div>
             <div className={styles.container}>
-                <Avatar />
+                <div className={styles.avatar}>
+                    <Avatar message="default" />
+                </div>
                 <div className={styles.audioPlayer}>
                     <AudioPlayer audio={currentAudio} />
                 </div>

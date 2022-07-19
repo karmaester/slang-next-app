@@ -14,8 +14,16 @@
 
 }
 
+.avatar {
+    display: block;
+    height: 200px;
+    width: 100%;
+}
+
 .exitButtonContainer {
-    margin-top: 1rem;
+    position: absolute;
+    top: 4rem;
+    z-index: 5;
 }
 
 .exit {
@@ -34,7 +42,7 @@
 
 @include media-medium {
     .exitButtonContainer {
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
     
     .exit {

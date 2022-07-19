@@ -1,13 +1,9 @@
 .imagesContainer {
     position: relative;
-
     &>* {
         position: absolute;
     }
 
-    // &:first-child {
-    //     z-index: 1;
-    // }
     @for $i from 1 through 3 {
     &:nth-child(#{$i}) {
         z-index: $i;
