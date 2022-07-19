@@ -7,7 +7,7 @@ import Avatar from '@components/Avatar/component/Avatar'
 const Home = () => {
     return (
         <div className={styles.container}>
-            <Avatar />
+            <Avatar message="This is a message" />
             <Link href="/Main">
                 <a>
                     <Button text="Start playing" />

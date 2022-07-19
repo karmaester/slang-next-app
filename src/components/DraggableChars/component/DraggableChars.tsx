@@ -33,7 +33,7 @@ const DraggableChars = ({ word, changeHandler }: DraggableCharsPropsT) => {
     }, [word]);
 
     useEffect(() => {
-        changeHandler(chars.map((item) => item.text));
+        changeHandler(chars.map((item) => item.text).join(""));
     }, [chars, changeHandler])
 
     return (
