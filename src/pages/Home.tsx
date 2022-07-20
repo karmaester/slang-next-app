@@ -4,7 +4,7 @@ import Button from "@components/Button/component/Button";
 import styles from "../styles/home.module.scss";
 import Avatar from "@components/Avatar/component/Avatar";
 
-const welcoming = "So nice to see you! I'm gaby, your English practicing partner. Press the start button to begin. Let's go for a new record, yay!";
+const welcoming = "So nice to see you! I'm Gaby, your English practicing partner. Press the start button to begin. Let's go for a new record, yay!";
 
 const Home = (): JSX.Element => {
     return (
