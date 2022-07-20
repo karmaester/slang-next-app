@@ -20,8 +20,8 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
 - Open the console
-- Download or git clone https://github.com/karmaester/Books-Books
-- cd Books-Books
+- Download or git clone git@github.com:karmaester/slang-next-app.git
+- cd slang-next-app
 
 Install npm:
 
