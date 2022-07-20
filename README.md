@@ -1,6 +1,8 @@
 # Slang App
 
-Next Progressive Web App for practicing English pronunciation
+Next Progressive Web App for practicing English pronunciation.
+
+As a PWA, this application is installable locally in both: mobile and desktop.
 
 ![screenshot](screenshot.png)
 
@@ -44,8 +46,8 @@ Run app in development mode:
 
 👤 **Khristian Rojas**
 
-- [Github:](https://github.com/karmaester)
-- [Linkedin:](https://www.linkedin.com/in/khristian-rojas/)
+- [Github](https://github.com/karmaester)
+- [Linkedin](https://www.linkedin.com/in/khristian-rojas/)
 
 ## 🤝 Contributing
 
@@ -60,6 +62,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Atlassian (react-beautiful-dnd creators)
+- [Joshwcomeau use-sound creator](https://github.com/joshwcomeau/use-sound)
 
 ## 📝 License
 
