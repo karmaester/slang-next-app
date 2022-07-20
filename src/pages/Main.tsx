@@ -3,18 +3,18 @@ import Avatar from "@components/Avatar/component/Avatar";
 import Button from "@components/Button/component/Button";
 import DraggableChars from "@components/DraggableChars/component/DraggableChars";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import Spinner from "@components/Spinner/component/Spinner";
-import styles from "../styles/Main.module.scss"
+import styles from "../styles/Main.module.scss";
 
 const mockData = {
     id: 276089,
     "audio-url": "https://cdn.slangapp.com/sounds/b983dfac78e8536e7b74e23126c0acd95ccf9e3c/normalized.mp3",
     "letter-pool": ["o", "c", "i", "o", "d", "c", "u", "t", "n", "n"]
-}
+};
 
-const Main = () => {
+const Main = (): JSX.Element => {
     const [loading, setLoading] = useState(false);
     const [word, setWord] = useState<string[]>([]);
     const [wordId, setWordId] = useState<number>();
@@ -23,7 +23,7 @@ const Main = () => {
     const [userResponse, setUserResponse] = useState();
     const [canMoveOn, setCanMoveOn] = useState(false);
     const [displayedText, setDisplayedText] = useState("Click the button below to hear the audio, then drag the letters to the right possition");
-    const [userScore, setUserScore] = useState(0)
+    const [userScore, setUserScore] = useState(0);
 
     if (loading) return <Spinner />
 
@@ -74,7 +74,7 @@ const Main = () => {
                 setCanMoveOn(true);
             })
             .catch(error => console.log('error', error));
-    }
+    };
 
     if (initialFetch) fetchNewWord();
 

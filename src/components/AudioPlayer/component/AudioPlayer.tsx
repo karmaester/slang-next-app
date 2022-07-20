@@ -6,7 +6,7 @@ import { AiOutlinePlayCircle } from "react-icons/ai";
 import styles from "../styles/AudioPlayer.module.scss"
 
 
-const AudioPlayer = ({ audio }: { audio: string }) => {
+const AudioPlayer = ({ audio }: { audio: string }): JSX.Element => {
     const [playSound] = useSound(audio)
 
     return (
@@ -23,6 +23,6 @@ const AudioPlayer = ({ audio }: { audio: string }) => {
             </div>
         </button>
     )
-}
+};
 
 export default AudioPlayer;

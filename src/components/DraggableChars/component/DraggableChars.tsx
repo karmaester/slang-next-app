@@ -12,7 +12,7 @@ type DraggableCharsPropsT = {
     changeHandler: any,
 }
 
-const reorder = (list: charsT, startIndex: number, endIndex: number) => {
+const reorder = (list: charsT, startIndex: number, endIndex: number): charsT => {
     const result = [...list];
     const [removed] = result.splice(startIndex, 1);
     result.splice(endIndex, 0, removed);
@@ -20,7 +20,7 @@ const reorder = (list: charsT, startIndex: number, endIndex: number) => {
     return result;
 };
 
-const DraggableChars = ({ word, changeHandler }: DraggableCharsPropsT) => {
+const DraggableChars = ({ word, changeHandler }: DraggableCharsPropsT): JSX.Element => {
     const [chars, setChars] = useState<charsT | []>([]);
 
     useEffect(() => {
@@ -82,6 +82,6 @@ const DraggableChars = ({ word, changeHandler }: DraggableCharsPropsT) => {
             </Droppable>
         </DragDropContext>
     );
-}
+};
 
 export default DraggableChars;

@@ -1,6 +1,5 @@
-import Home from './Home'
-import Layout from '@components/Layout/Layout'
+import Home from "./Home";
 
 export default function Index() {
   return <Home />
-}
+};

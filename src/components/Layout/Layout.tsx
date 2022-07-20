@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import Header from '../Header/component/Header'
+import Head from "next/head"
+import Header from "../Header/component/Header"
 
-export default function Layout({ children }: { children: JSX.Element }) {
+export default function Layout({ children }: { children: JSX.Element }): JSX.Element {
 
     return (
         <>
@@ -20,4 +20,4 @@ export default function Layout({ children }: { children: JSX.Element }) {
       `}</style>
         </>
     )
-}
+};

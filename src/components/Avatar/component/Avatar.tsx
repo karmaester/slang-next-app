@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import smile from "../images/smile.svg";
 import blink from "../images/blink.svg";
 import talk from "../images/talk.svg";
-import styles from "../styles/Avatar.module.scss"
+import styles from "../styles/Avatar.module.scss";
 
-const Avatar = ({ message }: any) => {
+const Avatar = ({ message }: { message: string }): JSX.Element => {
     const [talks, setTalks] = useState(false);
     const [blinks, setBlinks] = useState(false);
-    const [displayedText, setDisplaytext] = useState<string>("")
+    const [displayedText, setDisplaytext] = useState<string>("");
 
     const displayLetterByLetter = () => {
         let i = 0;
@@ -33,7 +33,7 @@ const Avatar = ({ message }: any) => {
                 setDisplaytext(temp);
             }
         }, 50);
-    }
+    };
 
     useEffect(() => {
         displayLetterByLetter();
@@ -72,6 +72,6 @@ const Avatar = ({ message }: any) => {
             </div>
         </>
     )
-}
+};
 
-export default Avatar
+export default Avatar;
