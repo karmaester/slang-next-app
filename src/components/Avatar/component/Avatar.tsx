@@ -37,6 +37,7 @@ const Avatar = ({ message }: any) => {
     }
 
     useEffect(() => {
+        setMustTalk(true)
         if (mustTalk) {
             displayLetterByLetter();
             setMustTalk(false)

@@ -29,7 +29,7 @@
 }
 
 .dialog {
-    font-size: medium;
+    font-size: 1.2rem;
     max-width: 300px;
     text-align: center;
     margin: 160px auto 0;
@@ -37,7 +37,7 @@
 
 @include media-small {
     .dialog {
-        font-size: large;
+        font-size: 1.5rem;
         max-width: 500px;
     }
     
@@ -45,7 +45,7 @@
 
 @include media-medium {
     .dialog {
-        font-size: x-large;
+        font-size: 2rem;
         max-width: 700px;
         margin: 150px auto 0;
     }

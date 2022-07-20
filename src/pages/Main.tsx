@@ -17,11 +17,13 @@ const mockData = {
 const Main = () => {
     const [loading, setLoading] = useState(false);
     const [word, setWord] = useState<string[]>([]);
-    const [wordId, setWordId] = useState<number>()
+    const [wordId, setWordId] = useState<number>();
     const [currentAudio, setCurrentAudio] = useState<string>("");
     const [initialFetch, setInitialFetch] = useState(true);
     const [userResponse, setUserResponse] = useState();
-    const [canMoveOn, setCanMoveOn] = useState(false)
+    const [canMoveOn, setCanMoveOn] = useState(false);
+    const [displayedText, setDisplayedText] = useState("Click the button below to hear the audio, then drag the letters to the right possition");
+    const [answerValidation, setAnswerValidation] = useState();
 
 
     if (loading) return <Spinner />
@@ -37,6 +39,7 @@ const Main = () => {
                 setCurrentAudio(data["audio-url"])
                 setWordId(data.id);
                 setLoading(false);
+                if (!initialFetch) setDisplayedText("You've got this!")
             }).catch(error => {
                 // In case of service failure, set default values
                 console.log(error)
@@ -58,17 +61,18 @@ const Main = () => {
             redirect: 'follow'
         };
         await fetch(`https://api.demo.slangapp.com/recruitment/spelling/?id=${wordId}&answer=${userResponse}`, requestOptions)
-            .then(response => response.text())
+            .then(response => response.json())
             .then(result => {
-                console.log(result);
+                result.correct ? setDisplayedText("Great job!") : setDisplayedText(`Correct answer is ${result["correct-answer"]}`);
                 setCanMoveOn(true);
             })
             .catch(error => console.log('error', error));
     }
 
     // useEffect(() => {
+    //     answerValidation ?? answerValidation?.correct ? setDisplayedText("Great job!") : setDisplayedText(`Correct answer is ${answerValidation["correct-answer"]}`);
     //     console.log("userResponse: ", userResponse);
-    // }, [userResponse]);
+    // }, []);
 
     if (initialFetch) fetchNewWord();
 
@@ -83,7 +87,7 @@ const Main = () => {
             </div>
             <div className={styles.container}>
                 <div className={styles.avatar}>
-                    <Avatar message="Click the button below to hear the audio, then drag the letters to the right possition" />
+                    <Avatar message={displayedText} />
                 </div>
                 <div className={styles.audioPlayer}>
                     <AudioPlayer audio={currentAudio} />
