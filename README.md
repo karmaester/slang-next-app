@@ -44,8 +44,8 @@ Run app in development mode:
 
 👤 **Khristian Rojas**
 
-- Github: [@githubhandle](https://github.com/karmaester)
-- Linkedin: [linkedin](https://www.linkedin.com/in/khristian-rojas/)
+- [Github:](https://github.com/karmaester)
+- [Linkedin:](https://www.linkedin.com/in/khristian-rojas/)
 
 ## 🤝 Contributing
 
