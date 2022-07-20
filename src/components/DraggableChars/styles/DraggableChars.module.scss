@@ -14,11 +14,12 @@
     color: rgb(55, 52, 250);
     box-shadow: 0px 2px 4px #4a4c4e;
     border-radius: 5px;
-    padding: 0.1em 0.3em;
+    padding: 2px;
     background-color: whitesmoke;
     text-align: center;
     margin: 5px;
     border: 2px solid transparent;
+    font-size: 1.2rem;
 }
 
 .item:active {
@@ -26,12 +27,18 @@
     border: 2px solid #4a9af5;
 }
 
-@include media-medium {
-    .itemsContainer {
-        font-size: 2rem;
-    }
-
+@include media-medium { 
     .item {
-        padding: 0.3em 0.5em;
+        font-size: 2rem;
+        padding: 0.3rem 0.5rem;
+        margin: 8px;
+    }
+}
+
+@include media-large {
+    .item {
+        margin: 10px;
+        font-size: 2.5rem;
+        padding: 0.5rem 0.8rem;
     }
 }

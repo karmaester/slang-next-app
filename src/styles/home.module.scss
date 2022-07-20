@@ -3,7 +3,6 @@
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     min-height: 90vh;
 
     &>* {
@@ -15,3 +14,10 @@
         text-decoration: none;
     }
 }
+
+.avatarContainer {
+    display: block;
+    height: 60vh;
+    margin-top: 8vh;
+}
+

@@ -9,7 +9,9 @@ const welcoming = "Welcome to Slang! I'm gaby, we will practice together, yay!"
 const Home = () => {
     return (
         <div className={styles.container}>
-            <Avatar message={welcoming} textOrientation="below" />
+            <div className={styles.avatarContainer}>
+                <Avatar message={welcoming} />
+            </div>
             <Link href="/Main">
                 <a>
                     <Button text="Start playing" />

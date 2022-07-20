@@ -1,11 +1,13 @@
-.button {
+@import '~@styles/mixins.scss';
+
+ .button {
     width: fit-content;
     font-weight: 700;
     color: #fff;
     background: #0577d6;
     border: 2px solid #0577d6;
-    font-size: 20px;
-    padding: 20px 40px;
+    font-size: 1.5rem;
+    padding: 10px 20px;
     cursor: pointer;
     border-radius: 100px;
     font-weight: 500;
@@ -21,4 +23,12 @@
 .button:active {
     margin-top: 1px;
     box-shadow: 2px 3px #888888;
+}
+
+@include media-medium {
+
+    .button {
+        font-size: 2rem;
+    padding: 20px 40px;
+    }
 }
