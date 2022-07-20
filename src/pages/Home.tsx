@@ -4,7 +4,7 @@ import Button from '@components/Button/component/Button'
 import styles from '../styles/home.module.scss'
 import Avatar from '@components/Avatar/component/Avatar'
 
-const welcoming = "Welcome to Slang! I'm gaby, we will practice together, yay!"
+const welcoming = "So nice to see you! I'm gaby, your English practicing partner. Press the start button to begin. Let's go for a new record, yay!"
 
 const Home = () => {
     return (
@@ -14,7 +14,7 @@ const Home = () => {
             </div>
             <Link href="/Main">
                 <a>
-                    <Button text="Start playing" />
+                    <Button text="Start" />
                 </a>
             </Link>
         </div>
