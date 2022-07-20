@@ -8,7 +8,6 @@ import styles from "../styles/Avatar.module.scss"
 const Avatar = ({ message }: any) => {
     const [talks, setTalks] = useState(false);
     const [blinks, setBlinks] = useState(false);
-    const [mustTalk, setMustTalk] = useState(true);
     const [displayedText, setDisplaytext] = useState<string>("")
 
     const displayLetterByLetter = () => {
@@ -37,11 +36,7 @@ const Avatar = ({ message }: any) => {
     }
 
     useEffect(() => {
-        setMustTalk(true)
-        if (mustTalk) {
-            displayLetterByLetter();
-            setMustTalk(false)
-        }
+        displayLetterByLetter();
     }, [message])
 
     return (
