@@ -23,8 +23,7 @@ const Main = () => {
     const [userResponse, setUserResponse] = useState();
     const [canMoveOn, setCanMoveOn] = useState(false);
     const [displayedText, setDisplayedText] = useState("Click the button below to hear the audio, then drag the letters to the right possition");
-    const [answerValidation, setAnswerValidation] = useState();
-
+    const [userScore, setUserScore] = useState(0)
 
     if (loading) return <Spinner />
 
@@ -63,21 +62,25 @@ const Main = () => {
         await fetch(`https://api.demo.slangapp.com/recruitment/spelling/?id=${wordId}&answer=${userResponse}`, requestOptions)
             .then(response => response.json())
             .then(result => {
-                result.correct ? setDisplayedText("Great job!") : setDisplayedText(`Correct answer is ${result["correct-answer"]}`);
+                let newScore = userScore + 1;
+                console.log("userScore1: ", userScore);
+                if (result.correct) {
+                    setUserScore(newScore);
+                    setDisplayedText("Great job, that is correct!")
+                } else {
+                    setUserScore(0);
+                    setDisplayedText(`Correct answer is "${result["correct-answer"]}". keep it up!`);
+                }
                 setCanMoveOn(true);
             })
             .catch(error => console.log('error', error));
     }
 
-    // useEffect(() => {
-    //     answerValidation ?? answerValidation?.correct ? setDisplayedText("Great job!") : setDisplayedText(`Correct answer is ${answerValidation["correct-answer"]}`);
-    //     console.log("userResponse: ", userResponse);
-    // }, []);
-
     if (initialFetch) fetchNewWord();
 
     return (
         <>
+            <div className={styles.score}>{`x${userScore.toString()}`}</div>
             <div className={styles.exitButtonContainer}>
                 <Link href="/Home">
                     <a className={styles.exit}>

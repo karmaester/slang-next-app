@@ -40,6 +40,16 @@
     width: 100%;
 }
 
+.score {
+    position: absolute;
+    color: rgb(14, 173, 14);
+    font-weight: 500;
+    font-size: 2rem;
+    top: 4rem;
+    right: 1rem;
+    padding: 1rem;
+}
+
 @include media-medium {
     .exitButtonContainer {
         margin-top: 1rem;
@@ -47,6 +57,12 @@
     
     .exit {
         line-height: 2rem;
+        font-size: 3rem;
+        padding: 2rem;
+    }
+
+    .score {
+        font-weight: 700;
         font-size: 3rem;
         padding: 2rem;
     }
