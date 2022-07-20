@@ -5,6 +5,7 @@ import DraggableChars from "@components/DraggableChars/component/DraggableChars"
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import Spinner from "@components/Spinner/component/Spinner";
 import styles from "../styles/Main.module.scss"
 
 const mockData = {
@@ -23,7 +24,7 @@ const Main = () => {
     const [canMoveOn, setCanMoveOn] = useState(false)
 
 
-    if (loading) return <>Loading</>
+    if (loading) return <Spinner />
 
     const fetchNewWord = async () => {
         setLoading(true);
