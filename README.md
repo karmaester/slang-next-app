@@ -76,9 +76,13 @@ The idea behind creating it as a PWA is that the user can install it on a device
 Having an avatar as a companion gives the app its own personality, which may result in the user connecting with it (this is a hypothesis that should be validated with user testing).
 
 As SEO practices, I would pay close attention to:
-- Time on page.Click through rate.
+- Time on page.
+- Click through rate.
 - User’s behavior on each screen.
 - Topical authority status according to google’s algorithm.
+- Largest contentful paint < 2.5s (with image and script optimization).
+- First imput delay < 100ms.
+- Cumulative layout shift > 0.1.
 
 There are no instructions regarding the score, that is done on purpose so when the user sends a correct answer and the streak changes or an incorrect answer sets it back to 0 it explains itself, which should lead the user to set a goal for higher streaks (this is also a hypothesis that should be confirmed or discarded).
 
